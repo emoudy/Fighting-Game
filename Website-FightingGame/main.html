@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">Tibble and Banach Fighting Game</h1>
+                <nav>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/eldamoudy">LinkedIn</a></li>
+                        <li><a href="https://github.com/emoudy">GitHub</a></li>
+                        <li><a href="https://twitter.com/eldamoudy">Tweeter</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article>
+                    <header>
+                        <h1>It's a caring battle...</h1>
+                        <p></p>
+                    </header>
+                    <section>
+                        <h2>Objective</h2>
+                        <p>The object of the game is to guess who, Tibble or Banach, can beat themselves up first.  Here is a little background on the characters:</p>
+                            <p>Tibble is tiny warrior who likes to collect large animals.  Although he is of small stature, he is NOT very accurante with his punches and often fails to hit himself. However, when he lands a punch, it is a HUGE blow!</p>
+                            <p>Banach is a tall sneaky rouge who likes to collect toys.  He is bigger than Tibble and is incredibly accurante punching himself.  BUT, he is not very strong so he can't hit himself very hard.</p>
+                    </section>
+                    <section>
+                        <h2>Who will beat themselves up first?
+                        <select id="selectfighter"></h2>
+                            <!--<option value=""></option></br> -->
+                            <option value="Tibble">Tibble</option></br>
+                            <option value="Banach">Banach</option></br>
+                            </select>
+                        <p><button id="startbutton">Start the fight!</button></p>
+                    </section>                    
+                    <section>
+                        <h2 id="fightresults"></h2>
+                        <p><gameArea id="gamearea"></gameArea></p>
+                    </section>
+                    <footer>
+                        <h3></h3>
+                        <p><button type="reset" id="playagain">Play Again!</a></button></p>
+                    </footer>
+                </article>
+
+                <aside>
+                    <h3>Background</h3>
+                    <p>It is not clear why Tibble and Banach beat themselves up in this game - but they do.  They are both caring individuals who enjoy delivering high damage.  Their caring nature is so big, that it often overpowers them.  This could be the reason why they choose to test their abilities by beating themselves up instead.</p>
+                </aside>
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>Sources</h3>
+                <p>HTML template has been downloaded from <a href="http://www.initializr.com/">initializr.com</a> and it has been modifed for this project.</p>
+            </footer>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script language="javascript" type ="text/javascript" src ="js/FightingGame.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
