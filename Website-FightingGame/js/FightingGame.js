@@ -1,10 +1,13 @@
 $(document).ready(function() {
+
  	$("#playagain").hide();
  	$("#fightresults").hide();
+
 	$("#startbutton").click(function() {
  		playFightingGame();
  	});
- 	var showresults = function(result) {
+
+ 	function showresults (result) {
  		$("#gamearea").append("<br>" + result);
  		$("#playagain").show();
  		$("#fightresults").show();
@@ -16,7 +19,6 @@ $(document).ready(function() {
 	var warrior = new MyHero ("Tibble", 7, 17);
 
 	function MyHero (name, agility, punch) {
-
 		this.name = name;
 		this.agility = agility;
 		this.punch = punch;
@@ -33,7 +35,7 @@ $(document).ready(function() {
 				this.hitdamage = 0;
 				showresults(this.name + " fails to hit himself!");
 			}
-			this.damage= this.hitdamage+this.damage
+			this.damage= this.hitdamage+this.damage;
 		};
 	};
 
@@ -53,22 +55,22 @@ $(document).ready(function() {
 
 		while (warrior.damage < life && rouge.damage < life) { 
 			Round = Round +1;
-			showresults("Round: " + Round);
+			showresults("<strong>Round: " + Round + "</strong>");
 			
 			rouge.hit();
 			warrior.hit();
 			showresults("Total damage: " + rouge.name + ": " + rouge.damage + " -- " + warrior.name + ": " + warrior.damage);
-//			showresults(warrior.name + " has taken " + warrior.damage + " points of damage!");
 		};
-			if (warrior.damage >= life && warrior.damage > rouge.damage){
+
+			if (warrior.damage >= life && warrior.damage > rouge.damage) {
 				winner = warrior.name;
-				showresults(warrior.name + " Wins!");
+				showresults("<strong>" + warrior.name + " Wins!</strong>");
 				resultsFightingGame();
 			} else {
 				winner = rouge.name;
-				showresults(rouge.name + " Wins!");
+				showresults("<strong>" + rouge.name + " Wins!</strong>");
 				resultsFightingGame();
-			}
+			};
 		};
 
 	var resultsFightingGame = function () {
@@ -78,16 +80,15 @@ $(document).ready(function() {
 			showresults("Great Guess! You're awesome!");
 		} else {
 			showresults("...but you were WRONG! Better luck next time!");
-			}
 		};
+	};
 
 	var preludeFightingGame = function() {
-
 		showresults("Welcome to the never ending battle between a rouge named Banach and a warrior named Tibble.");
 		playFightingGame();
 	};
 
-$("#playagain").on("click", function() {
+	$("#playagain").on("click", function() {
 		document.location.reload(true);
 		playFightingGame();
 	});
