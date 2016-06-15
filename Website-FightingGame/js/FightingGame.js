@@ -53,27 +53,26 @@ $(document).ready(function() {
 			warrior.hit();
 			showresults("Total damage: " + rouge.name + ": " + rouge.damage + " -- " + warrior.name + ": " + warrior.damage);
 		};
-		
+
 		if (warrior.damage >= life && warrior.damage > rouge.damage){
-			winner = warrior.name;
-			showresults(warrior.name + " Wins!");
-			resultsFightingGame();
+			winner = warrior;
 		} else {
-			winner = rouge.name;
-			showresults(rouge.name + " Wins!");
-			resultsFightingGame();
+			winner = rouge;
 		}
+
+		showresults(winner.name + " Wins!");
+		resultsFightingGame();
 	};
 
 	var resultsFightingGame = function () {
 		showresults("You said that " + userBet + " could beat himself first...");
 
-		if (userBet == winner) {
+		if (userBet == winner.name) {
 			showresults("Great Guess! You're awesome!");
 		} else {
 			showresults("...but you were WRONG! Better luck next time!");
-			}
-		};
+		}
+	};
 
 	var preludeFightingGame = function() {
 
