@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	var playagainButton = $("#playagain");
+	var gameArea = $("#gamearea");
 
  	playagainButton.hide();
 	$("#startbutton").click(function() {
@@ -7,7 +8,7 @@ $(document).ready(function() {
  	});
 
  	var showresults = function(result) {
- 		$("#gamearea").append("<br>" + result);
+ 		gameArea.append("<br>" + result);
  		playagainButton.show();
 	};
 
@@ -38,6 +39,13 @@ $(document).ready(function() {
 		}
 			
 		this.damage= this.hitdamage+this.damage;
+	};
+
+	function resetGame() {
+		rouge = new MyHero ("Banach", 17, 7);
+		warrior = new MyHero ("Tibble", 7, 17);
+
+		gameArea.empty();
 	};
 
 	var playFightingGame = function() {
@@ -84,7 +92,7 @@ $(document).ready(function() {
 	};
 
 	playagainButton.on("click", function() {
-		document.location.reload(true);
+		resetGame();
 		playFightingGame();
 	});
 });
