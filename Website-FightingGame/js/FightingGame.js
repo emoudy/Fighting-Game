@@ -42,7 +42,7 @@ $(document).ready(function() {
 		var life = 100;
 		var Round = 0;
 
-		userBet = $("#selectfighter option:selected").text();
+		userBet = $("#selectfighter").val();
 
 		showresults("You placed your bet on " + userBet + ".  Good luck!");
 
