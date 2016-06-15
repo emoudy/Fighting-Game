@@ -43,12 +43,8 @@ $(document).ready(function() {
 		var Round = 0;
 
 		userBet = $("#selectfighter option:selected").text();
-		
-		if (userBet == "Tibble") {
-			showresults("You placed your bet on Tibble.  Good luck!");
-		}	else if (userBet == "Banach") {
-			showresults("You placed your bet on Banach.  Good luck!");
-		};
+
+		showresults("You placed your bet on " + userBet + ".  Good luck!");
 
 		while (warrior.damage < life && rouge.damage < life) { 
 			Round = Round +1;
