@@ -42,14 +42,13 @@ $(document).ready(function() {
 		var life = 100;
 		var Round = 0;
 
-		do {
-			userBet = $("#selectfighter option:selected").text();
-			if (userBet == "Tibble") {
-				showresults("You placed your bet on Tibble.  Good luck!");
-			}	else if (userBet == "Banach") {
-				showresults("You placed your bet on Banach.  Good luck!");
-			};
-		} while (userBet == "");
+		userBet = $("#selectfighter option:selected").text();
+		
+		if (userBet == "Tibble") {
+			showresults("You placed your bet on Tibble.  Good luck!");
+		}	else if (userBet == "Banach") {
+			showresults("You placed your bet on Banach.  Good luck!");
+		};
 
 		while (warrior.damage < life && rouge.damage < life) { 
 			Round = Round +1;
