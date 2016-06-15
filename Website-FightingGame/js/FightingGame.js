@@ -4,6 +4,7 @@ $(document).ready(function() {
 	$("#startbutton").click(function() {
  		playFightingGame();
  	});
+ 	
  	var showresults = function(result) {
  		$("#gamearea").append("<br>" + result);
  		$("#playagain").show();
@@ -78,7 +79,6 @@ $(document).ready(function() {
 	};
 
 	var preludeFightingGame = function() {
-
 		showresults("Welcome to the never ending battle between a rouge named Banach and a warrior named Tibble.");
 		playFightingGame();
 	};
