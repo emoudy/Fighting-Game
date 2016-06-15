@@ -16,7 +16,6 @@ $(document).ready(function() {
 	var warrior = new MyHero ("Tibble", 7, 17);
 
 	function MyHero (name, agility, punch) {
-
 		this.name = name;
 		this.agility = agility;
 		this.punch = punch;
@@ -47,24 +46,24 @@ $(document).ready(function() {
 		showresults("You placed your bet on " + userBet + ".  Good luck!");
 
 		while (warrior.damage < life && rouge.damage < life) { 
-			Round = Round +1;
+			Round = Round + 1;
 			showresults("Round: " + Round);
 			
 			rouge.hit();
 			warrior.hit();
 			showresults("Total damage: " + rouge.name + ": " + rouge.damage + " -- " + warrior.name + ": " + warrior.damage);
-//			showresults(warrior.name + " has taken " + warrior.damage + " points of damage!");
 		};
-			if (warrior.damage >= life && warrior.damage > rouge.damage){
-				winner = warrior.name;
-				showresults(warrior.name + " Wins!");
-				resultsFightingGame();
-			} else {
-				winner = rouge.name;
-				showresults(rouge.name + " Wins!");
-				resultsFightingGame();
-			}
-		};
+		
+		if (warrior.damage >= life && warrior.damage > rouge.damage){
+			winner = warrior.name;
+			showresults(warrior.name + " Wins!");
+			resultsFightingGame();
+		} else {
+			winner = rouge.name;
+			showresults(rouge.name + " Wins!");
+			resultsFightingGame();
+		}
+	};
 
 	var resultsFightingGame = function () {
 		showresults("You said that " + userBet + " could beat himself first...");
