@@ -20,20 +20,23 @@ $(document).ready(function() {
 		this.agility = agility;
 		this.punch = punch;
 		this.damage = 0;
-		this.hit = function() {
-			this.hitRoll = Math.floor(Math.random()*20 +1);
-			if (this.hitRoll === 20) {
-				this.hitdamage = 12 + this.punch;
-	 			showresults(this.name + " crits himself for " + this.hitdamage + " points.");
-			} else if (this.hitRoll < this.agility) {
-				this.hitdamage = (Math.floor(Math.random()*12)) + this.punch;
-				showresults(this.name + " hits himself for " + this.hitdamage + " points.");
-			} else {
-				this.hitdamage = 0;
-				showresults(this.name + " fails to hit himself!");
-			}
-			this.damage= this.hitdamage+this.damage
-		};
+	};
+
+	MyHero.prototype.hit = function() {
+		this.hitRoll = Math.floor(Math.random() * 20 + 1);
+		
+		if (this.hitRoll === 20) {
+			this.hitdamage = 12 + this.punch;
+ 			showresults(this.name + " crits himself for " + this.hitdamage + " points.");
+		} else if (this.hitRoll < this.agility) {
+			this.hitdamage = (Math.floor(Math.random() * 12)) + this.punch;
+			showresults(this.name + " hits himself for " + this.hitdamage + " points.");
+		} else {
+			this.hitdamage = 0;
+			showresults(this.name + " fails to hit himself!");
+		}
+			
+		this.damage= this.hitdamage+this.damage;
 	};
 
 	var playFightingGame = function() {
