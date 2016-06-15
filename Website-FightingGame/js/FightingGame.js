@@ -6,12 +6,9 @@ $(document).ready(function() {
  		playFightingGame();
  	});
 
- 	$("#fightresults").hide();
-
  	var showresults = function(result) {
  		$("#gamearea").append("<br>" + result);
  		playagainButton.show();
- 		$("#fightresults").show();
 	};
 
 	var winner, userBet;
