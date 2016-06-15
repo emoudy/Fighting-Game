@@ -1,13 +1,16 @@
 $(document).ready(function() {
- 	$("#playagain").hide();
- 	$("#fightresults").hide();
+	var playagainButton = $("#playagain");
+
+ 	playagainButton.hide();
 	$("#startbutton").click(function() {
  		playFightingGame();
  	});
- 	
+
+ 	$("#fightresults").hide();
+
  	var showresults = function(result) {
  		$("#gamearea").append("<br>" + result);
- 		$("#playagain").show();
+ 		playagainButton.show();
  		$("#fightresults").show();
 	};
 
@@ -83,7 +86,7 @@ $(document).ready(function() {
 		playFightingGame();
 	};
 
-$("#playagain").on("click", function() {
+	playagainButton.on("click", function() {
 		document.location.reload(true);
 		playFightingGame();
 	});
